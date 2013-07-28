@@ -22,9 +22,10 @@
     $.get('/movies', function(res) {
       var a = [];
       var length = $(res).find('a').length;
-      for(i=0;i<length;i++){
+      for(i=1;i<length-1;i++){
         item = $(res).find('a')[i]
-        $('.list').append('<a href="view?movie='+item.innerHTML+'">'+item+'</a><br/>')
+        //$('.list').append('<a href="view?movie='+item.innerHTML+'">'+item+'</a><br/>')
+        $('.list').append('<a href="movies/'+item.innerHTML+'">'+item+'</a><br/>')
       }
     })
   </script>
