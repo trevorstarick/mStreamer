@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+  <title>Video Stream</title>
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-glyphicons.css">
+
+  <script type="text/javascript" href="js/jquery.js" />
+</head>
+
+<body>
+  <div class="list">
+  
+  </div>
+  <script>
+    $.get('movies', function(res) {
+      var a = [];
+      var length = $(res).find('a').length;
+      for(i=0;i<length;i++){
+            $(".list").append(i);
+      }
+    })
+  </script>
+</body>
+</html>
