@@ -8,10 +8,10 @@
 
   <title>Video Stream</title>
 
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap-glyphicons.css">
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap-glyphicons.css">
 
-  <script type="text/javascript" href="js/jquery.js" />
+  <script type="text/javascript" src="static/js/jquery.min.js"></script>
 </head>
 
 <body>
@@ -19,11 +19,12 @@
   
   </div>
   <script>
-    $.get('movies', function(res) {
+    $.get('/movies', function(res) {
       var a = [];
       var length = $(res).find('a').length;
       for(i=0;i<length;i++){
-            $(".list").append(i);
+        item = $(res).find('a')[i]
+        $('.list').append('<a href="view?movie='+item.innerHTML+'">'+item+'</a><br/>')
       }
     })
   </script>

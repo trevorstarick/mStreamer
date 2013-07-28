@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script>
+      function getURLParameter(name) {
+        return decodeURI(
+            (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+        );
+      }
+      function main(){
+        var movie = '/movies/'+getURLParameter('movie');
+        movie = movie.substring(0, movie.length -1)
+        console.log(movie);
+        document.getElementById('frame').src=movie;
+      }
+    </script>
+  <title>Video Stream</title>
+  <style>
+  #frame {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+
+</head>
+
+<body onload='main()'>
+  <video id="frame" src="" controls autoplay></video>
+</body>
+</html>
